@@ -1,0 +1,21 @@
+name: 'Azure Keyvault Mapper'
+description: 'Maps values obtained from keyvault'
+author: 'Your name or organization here'
+inputs:
+  operation:
+    required: true
+    description: 'Operation type. "map" to map values or "keys" to get keys (comma separated)'
+    default: 'map'
+  map:
+    required: true
+    description: 'The mapping. Maps keys from source to target. Map is in JSON format [{"sourceKey1": "mappedKey1"},..,{"sourceKeyN": "mappedKeyN"}]"'
+  secrets:
+    required: false
+    description: 'the output of Azure/get-keyvault-secrets action. Pass as in an expreesssion: toJSON(steps.GETKEYVID.outputs'
+  
+outputs:
+  keys:
+    description: The list of keys (separated with comma)
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
