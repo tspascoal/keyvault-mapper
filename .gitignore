@@ -97,3 +97,8 @@ Thumbs.db
 # Ignore built ts files
 tests/runner/*
 lib/**/*
+
+# ignore unit test reports
+
+reports/
+coverage/
