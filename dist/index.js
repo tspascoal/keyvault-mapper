@@ -9,11 +9,15 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CaseInsensitiveMap = void 0;
 class CaseInsensitiveMap extends Map {
-    set(key, value) {
+    get(key) {
         if (typeof key === 'string') {
-            key = key.toLowerCase(); // eslint-disable-line @typescript-eslint/no-explicit-any
+            for (const k of super.keys()) {
+                if (k.toLowerCase() === key.toLowerCase()) {
+                    return super.get(k);
+                }
+            }
         }
-        return super.set(key, value);
+        return super.get(key);
     }
 }
 exports.CaseInsensitiveMap = CaseInsensitiveMap;

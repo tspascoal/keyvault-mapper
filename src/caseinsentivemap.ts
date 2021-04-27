@@ -1,8 +1,12 @@
 export class CaseInsensitiveMap<T, U> extends Map<T, U> {
-  set(key: T, value: U): this {
+  get(key: T): U | undefined {
     if (typeof key === 'string') {
-      key = (key.toLowerCase() as any) as T // eslint-disable-line @typescript-eslint/no-explicit-any
+      for (const k of super.keys()) {
+        if (((k as unknown) as string).toLowerCase() === key.toLowerCase()) {
+          return super.get(k)
+        }
+      }
     }
-    return super.set(key, value)
+    return super.get(key)
   }
 }
