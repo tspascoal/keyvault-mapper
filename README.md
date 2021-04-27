@@ -21,6 +21,7 @@ In this example a secret in keyvault with the name `KV_SECRET_NAME1` will be ava
 
 The action supports two distinct operations
 
+
 ### keys
 
 This operation allows you to get the keys to be passed [Azure/get-keyvault-secrets] action, this way you just need to define the keys on the map.
