@@ -87,7 +87,7 @@ steps:
     uses: tspascoal/keyvault-mapper@v1
     id: keyVaultSecrets
     with:
-      operation: keys
+      operation: map
       map: ${{ env.kvMap }}
       secrets: ${{ toJSON(steps.fetchKeyVaultSecrets.outputs) }}
 
