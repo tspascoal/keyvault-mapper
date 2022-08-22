@@ -24,6 +24,7 @@ jobs:
           npm run all
 
       - name: Publish Unit Test Results
+        if: github.actor != 'dependabot[bot]'
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
