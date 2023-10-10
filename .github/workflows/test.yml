@@ -28,9 +28,8 @@ jobs:
           npm run all
 
       - name: Publish Unit Test Results
-        if: github.actor != 'dependabot[bot]'
+        if: github.actor != 'dependabot[bot]' && always()
         uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()
         with:
           files: 'reports/**/junit.xml'
 
