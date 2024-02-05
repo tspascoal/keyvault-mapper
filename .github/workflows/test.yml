@@ -17,10 +17,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Check new dependencies
-        uses: actions/dependency-review-action@v2
+        uses: actions/dependency-review-action@v4
         if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
       - run: |
           npm install
@@ -29,7 +29,7 @@ jobs:
 
       - name: Publish Unit Test Results
         if: github.actor != 'dependabot[bot]' && always()
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: 'reports/**/junit.xml'
 
@@ -42,7 +42,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: ./
         id: kvMapper
         with:
