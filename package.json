@@ -39,7 +39,7 @@
     "jest-circus": "^29.6.2",
     "jest-junit": "^16.0.0",
     "js-yaml": "^4.1.0",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "standard": "^17.1.2",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.2"
