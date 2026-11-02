@@ -1,5 +1,8 @@
 # Azure Keyvault keys mapper
 
+> [!WARNING]
+> With the deprecation of `Azure/get-keyvault-secrets` action this repo has been archived.
+
 Dynamically map key vault secrets obtained using the [Azure/get-keyvault-secrets](https://github.com/Azure/get-keyvault-secrets) action.
 
 This allows you to have different keys on keyvault (exempl with a dynamic preffix or a variable type) in the name and map them to fixed names so you can use it on your workflow with a fixed name without having to change your keyvault secret names.
